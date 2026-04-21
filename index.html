@@ -11,210 +11,86 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- Root CSS Variables & Branding --- */
         :root {
-            --primary-color: #2D3A42; /* approachable dark grey from poster base */
-            --accent-green: #97E33F;  /* the specific lime green from your logo & glowing elements */
-            --accent-glow: #71B320;   /* the outer glow green from poster icons */
+            --primary-color: #2D3A42;
+            --accent-green: #97E33F;
+            --accent-glow: #71B320;
             --white: #FFFFFF;
             --text-on-white: #333333;
             --text-on-dark: #FFFFFF;
-            --border-grey: #DDDDDD;
             --main-font: 'Montserrat', sans-serif;
             --transition: all 0.3s ease-in-out;
         }
 
-        /* --- Global Reset & Reset Basics --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; font-size: 100%; }
-        body {
-            font-family: var(--main-font);
-            line-height: 1.6;
-            color: var(--text-on-white);
-            background-color: var(--white);
-            overflow-x: hidden;
-        }
+        body { font-family: var(--main-font); line-height: 1.7; color: var(--text-on-white); background-color: var(--white); overflow-x: hidden; }
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; transition: var(--transition); }
         ul { list-style: none; }
-        h1, h2, h3 { font-weight: 700; color: var(--primary-color); }
+        h1, h2, h3 { color: var(--primary-color); }
 
-        /* --- Section Container Bascs --- */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        section { padding: 80px 0; }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-header h2 { font-size: 2.5rem; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 100px 20px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 3rem; }
 
-        /* --- Professional Buttons (CTAs) --- */
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: var(--accent-green);
-            color: var(--primary-color);
-            font-weight: 700;
-            border-radius: 50px;
-            border: 2px solid var(--accent-green);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            text-align: center;
-        }
-        .btn:hover {
-            background-color: transparent;
-            color: var(--accent-green);
-        }
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-        .btn-secondary:hover {
-            background-color: var(--white);
-            color: var(--primary-color);
-        }
-
-        /* --- 1. Header & Navigation (Fixed for confidence) --- */
+        /* --- Header & Navigation --- */
         header {
-            position: fixed;
-            top: 0; width: 100%; height: 90px;
+            position: fixed; top: 0; width: 100%; height: 100px;
             background-color: var(--white);
-            border-bottom: 1px solid var(--border-grey);
-            display: flex; align-items: center;
-            z-index: 1000;
+            border-bottom: 2px solid var(--accent-green);
+            display: flex; align-items: center; z-index: 1000;
         }
-        .nav-inner {
-            display: flex; justify-content: space-between; align-items: center;
-            height: 100%;
-        }
-        .logo-img { height: 60px; } /* Ensure logo.png is present */
-        .nav-links { display: flex; gap: 30px; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 70px; width: auto; }
+        .nav-links ul { display: flex; gap: 40px; }
+        .nav-links a { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px; }
         .nav-links a:hover { color: var(--accent-green); }
-        .btn-nav { font-size: 0.9rem; padding: 10px 20px; }
 
-        /* --- 2. The Hero Section (The "Hook") --- */
+        /* --- Buttons --- */
+        .btn { display: inline-block; padding: 15px 30px; background-color: var(--accent-green); color: var(--primary-color); font-weight: 700; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
+        .btn:hover { background-color: var(--primary-color); color: var(--white); }
+        .btn-nav { padding: 12px 25px; }
+
+        /* --- Hero --- */
         #hero {
             height: 100vh;
             background: radial-gradient(circle at center, #3A4A56 0%, var(--primary-color) 100%);
-            display: flex; align-items: center; text-align: center;
+            display: flex; align-items: center; justify-content: center; text-align: center;
             color: var(--text-on-dark);
-            padding-top: 100px; /* Offset fixed header */
+            padding-top: 100px;
         }
         #hero h1 { font-size: 3.5rem; color: var(--text-on-dark); margin-bottom: 20px; }
-        #hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto 40px auto; opacity: 0.9; }
-        .hero-btns { display: flex; gap: 20px; justify-content: center; }
+        #hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto 40px auto; opacity: 0.9; }
 
-        /* --- 3. The Frustration Section (The "Why") --- */
-        #frustration { background-color: #F8F9FA; }
-        .frustration-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .frustration-text h2 { margin-bottom: 20px; text-align: left;}
-        .frustration-text p { font-size: 1.1rem; color: var(--text-on-white); margin-bottom: 30px;}
-
-        /* --- 4. Our Services (The "What") --- */
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+        /* --- Services --- */
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         .service-card {
             background-color: var(--white);
-            border: 1px solid var(--border-grey);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border-radius: 20px;
-            padding: 40px;
+            padding: 50px;
             text-align: center;
-            transition: var(--transition);
         }
-        .service-card:hover {
-            border-color: var(--accent-green);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .icon-circle {
-            width: 80px; height: 80px;
-            margin: 0 auto 30px auto;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            background-color: transparent;
-            border: 2px solid var(--accent-glow);
-            box-shadow: 0 0 15px var(--accent-glow); /* Glowing effect inspired by poster */
-        }
+        .icon-circle { width: 80px; height: 80px; margin: 0 auto 30px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-glow); }
         .service-icon-svg { width: 40px; height: 40px; fill: var(--accent-green); }
-        .service-card h3 { margin-bottom: 15px; font-size: 1.25rem; }
 
-        /* --- 5. The Trust Block (The "Why Me?") --- */
+        /* --- Trust --- */
         #trust { background-color: var(--primary-color); color: var(--text-on-dark); }
         #trust h2, #trust h3 { color: var(--text-on-dark); }
-        .trust-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .trust-img-wrap { border-radius: 20px; overflow: hidden; }
-        .trust-content ul { display: grid; grid-template-columns: 1fr 1fr; gap: 30px;}
-        .trust-item h3 { color: var(--accent-green); margin-bottom: 10px;}
-        .trust-item p { opacity: 0.9; }
+        .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .trust-img-wrap img { border-radius: 20px; }
 
-        /* --- 6. How It Works (The "Ease") --- */
-        #how-it-works { background-color: #F8F9FA; }
-        .step-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            position: relative;
-        }
-        .step-card { text-align: center; background: var(--white); padding: 40px; border-radius: 20px; border: 1px solid var(--border-grey); }
-        .step-number {
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            background-color: var(--accent-green);
-            color: var(--primary-color);
-            font-weight: 700;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 20px auto; font-size: 1.5rem;
-        }
-        .step-card p { opacity: 0.9; }
+        /* --- Footer --- */
+        footer { background-color: #1A2126; color: var(--text-on-dark); padding: 80px 0; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-logo-img { height: 60px; margin-bottom: 20px;}
 
-        /* --- 7. The Footer (Contact Details) --- */
-        footer {
-            background-color: #1A2126; /* Darker grey footer from poster */
-            color: var(--text-on-dark);
-            padding: 80px 0;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-        .footer-logo img { height: 50px; margin-bottom: 20px;}
-        .footer-contact h4 { color: var(--accent-green); margin-bottom: 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;}
-        .footer-contact p { margin-bottom: 10px; }
-        .footer-cta { text-align: center; padding-top: 40px; border-top: 1px solid #333; }
-        .footer-legal { text-align: center; margin-top: 40px; font-size: 0.8rem; opacity: 0.7; }
-
-        /* --- 8. Responsive (Mobile-First) Media Queries --- */
         @media (max-width: 992px) {
-            html { font-size: 90%; }
-            #hero h1 { font-size: 3rem; }
-            .section-header h2 { font-size: 2.2rem; }
-            .trust-grid, .frustration-grid, .step-grid { grid-template-columns: 1fr; }
             .nav-links, .nav-cta { display: none; }
-            .trust-content ul { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            #hero h1 { font-size: 2.5rem; }
-            #hero p { font-size: 1.1rem; }
-            .hero-btns { flex-direction: column; gap: 10px; }
-            .btn { width: 100%; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .section-header h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -224,13 +100,12 @@
     <header>
         <div class="container nav-inner">
             <div class="logo">
-                <a href="#hero"><img src="logo.png" alt="Tech It Easy Support Logo" class="logo-img"></a>
+                <a href="#hero"><img src="TECHITEASYLOGO.jpg" alt="Tech It Easy Support Logo" class="logo-img"></a>
             </div>
             <nav class="nav-links">
                 <ul>
                     <li><a href="#frustration">Why Us</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#trust">Why Us</a></li>
                     <li><a href="#how-it-works">How We Help</a></li>
                 </ul>
             </nav>
@@ -246,119 +121,31 @@
             <p>Professional WiFi, Streaming, and Smart Home Support for Essex. Jargon-free, fully insured, and reliable.</p>
             <div class="hero-btns">
                 <a href="#footer" class="btn">Book Your First Visit Today. ✓</a>
-                <a href="#services" class="btn btn-secondary">Our Services ✓</a>
             </div>
         </div>
-    </section>
-
-    <section id="frustration">
-        <div class="container frustration-grid">
-            <div class="frustration-text">
-                <h2>Tired of your tech causing more frustration than relaxation?</h2>
-                <p>Technology should make life easier, not more complicated. Whether you’re struggling with patchy Wi-Fi, need help wall-mounting that new smart TV, or want your whole living room to look tidy and integrated, I have you covered.</p>
-                <p>I help residents across Essex take back control of their home technology—without the complicated manuals or confusing jargon.</p>
-                <a href="#services" class="btn">Learn How We Help ✓</a>
-            </div>
-            </div>
     </section>
 
     <section id="services">
         <div class="container">
             <div class="section-header">
-                <h2>What We Do ✓</h2>
+                <h2>Our Core Services ✓</h2>
             </div>
             <div class="service-grid">
-                
                 <div class="service-card">
-                    <div class="icon-circle">
-                        <svg class="service-icon-svg" viewBox="0 0 512 512"><path d="M480 306.2c0 24.5-19.8 44.2-44.2 44.2H320v-40h115.8c11.6 0 20.8-9.2 20.8-20.8s-9.2-20.8-20.8-20.8H320V120H192v148.2h-35.8C144.6 268.2 136 277 136 288.6s9.2 20.8 20.8 20.8H192v40h-75.8C91.8 350.4 72 330.6 72 306.2s19.8-44.2 44.2-44.2H192V120h-75.8C91.8 120 72 100.2 72 75.8S91.8 32 116.2 32h279.6C420.2 32 440 51.8 440 76.2s-19.8 44.2-44.2 44.2H320V262h75.8C420.2 262 440 281.8 440 306.2zM280 200V120H192v80h88z"/></svg>
-                    </div>
+                    <div class="icon-circle"><svg class="service-icon-svg" viewBox="0 0 512 512"><path d="M480 306.2c0 24.5-19.8 44.2-44.2 44.2H320v-40h115.8c11.6 0 20.8-9.2 20.8-20.8s-9.2-20.8-20.8-20.8H320V120H192v148.2h-35.8C144.6 268.2 136 277 136 288.6s9.2 20.8 20.8 20.8H192v40h-75.8C91.8 350.4 72 330.6 72 306.2s19.8-44.2 44.2-44.2H192V120h-75.8C91.8 120 72 100.2 72 75.8S91.8 32 116.2 32h279.6C420.2 32 440 51.8 440 76.2s-19.8 44.2-44.2 44.2H320V262h75.8C420.2 262 440 281.8 440 306.2zM280 200V120H192v80h88z"/></svg></div>
                     <h3>WiFi & Connectivity</h3>
-                    <p>Stop the buffering. Optimize your router placement and eliminate dead zones for whole-home coverage.</p>
+                    <p>Stop the buffering. Optimize your router placement for whole-home coverage.</p>
                 </div>
-
                 <div class="service-card">
-                    <div class="icon-circle">
-                        <svg class="service-icon-svg" viewBox="0 0 576 512"><path d="M512 0H64C28.6 0 0 28.6 0 64v288c0 35.4 28.6 64 64 64h128v64H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96v-64h128c35.4 0 64-28.6 64-64V64c0-35.4-28.6-64-64-64zM512 352c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32h416c17.7 0 32 14.3 32 32v288zM416 112H160c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32z"/></svg>
-                    </div>
+                    <div class="icon-circle"><svg class="service-icon-svg" viewBox="0 0 576 512"><path d="M512 0H64C28.6 0 0 28.6 0 64v288c0 35.4 28.6 64 64 64h128v64H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96v-64h128c35.4 0 64-28.6 64-64V64c0-35.4-28.6-64-64-64zM512 352c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32h416c17.7 0 32 14.3 32 32v288zM416 112H160c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32z"/></svg></div>
                     <h3>Streaming & TV Setup</h3>
-                    <p>From wall mounting that new Smart TV to app configuration (Fire Stick/Shield)—get your entertainment ready in minutes.</p>
+                    <p>From wall mounting that new Smart TV to app configuration—we handle it all.</p>
                 </div>
-
                 <div class="service-card">
-                    <div class="icon-circle">
-                        <svg class="service-icon-svg" viewBox="0 0 640 512"><path d="M608 64c0-17.7-14.3-32-32-32H64C28.6 0 0 28.6 0 64v320c0 35.4 28.6 64 64 64h128v64H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96v-64h128c35.4 0 64-28.6 64-64V64c0-35.4-28.6-64-64-64zM512 352H64V64h416v288zM160 112H416v32H160zm112 112h80v80h-80z"/></svg>
-                    </div>
+                    <div class="icon-circle"><svg class="service-icon-svg" viewBox="0 0 640 512"><path d="M608 64c0-17.7-14.3-32-32-32H64C28.6 0 0 28.6 0 64v320c0 35.4 28.6 64 64 64h128v64H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96v-64h128c35.4 0 64-28.6 64-64V64c0-35.4-28.6-64-64-64zM512 352H64V64h416v288zM160 112H416v32H160zm112 112h80v80h-80z"/></svg></div>
                     <h3>Smart Home Integration</h3>
-                    <p>Lights, security, and hubs. We connect your smart devices (hubs, bulbs, cameras) so they actually work together.</p>
+                    <p>Lights, security, and hubs. We connect your devices so they actually work together.</p>
                 </div>
-
-                <div class="service-card">
-                    <div class="icon-circle">
-                        <svg class="service-icon-svg" viewBox="0 0 512 512"><path d="M480 306.2c0 24.5-19.8 44.2-44.2 44.2H320v-40h115.8c11.6 0 20.8-9.2 20.8-20.8s-9.2-20.8-20.8-20.8H320V120H192v148.2h-35.8C144.6 268.2 136 277 136 288.6s9.2 20.8 20.8 20.8H192v40h-75.8C91.8 350.4 72 330.6 72 306.2s19.8-44.2 44.2-44.2H192V120h-75.8C91.8 120 72 100.2 72 75.8S91.8 32 116.2 32h279.6C420.2 32 440 51.8 440 76.2s-19.8 44.2-44.2 44.2H320V262h75.8C420.2 262 440 281.8 440 306.2zM280 200V120H192v80h88z"/></svg>
-                    </div>
-                    <h3>'Cinematic Tidy' Service</h3>
-                    <p>Professional cable management. We hide messy wires and clutter for a perfectly clean, integrated media setup.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="trust">
-        <div class="container trust-grid">
-            <div class="trust-img-wrap">
-                <img src="toolkit.jpg" alt="Glenn's professional tech support toolkit in Essex" class="trust-img"> </div>
-            <div class="trust-content">
-                <h2>Why trust Tech It Easy Support? ✓</h2>
-                <p>I’m a dedicated, professional tech expert focused on providing reliable service to my community. I am fully Public Liability insured and my goal is simple: Your tech, sorted. ✓</p>
-                <ul>
-                    <li class="trust-item">
-                        <h3>Local Expert</h3>
-                        <p>Serving Laindon, Canvey Island, Basildon, and surrounding areas. ✓</p>
-                    </li>
-                    <li class="trust-item">
-                        <h3>Jargon-Free ✓</h3>
-                        <p>We explain tech simply, in plain English. No confusing manuals. ✓</p>
-                    </li>
-                    <li class="trust-item">
-                        <h3>Guaranteed ✓</h3>
-                        <p>If we can't solve your issue, you won't pay. ✓</p>
-                    </li>
-                    <li class="trust-item">
-                        <h3>Fully Insured ✓</h3>
-                        <p>Professional peace of mind. Public Liability Insurance. ✓</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-it-works">
-        <div class="container step-section">
-            <div class="section-header">
-                <h2>How We Get You Sorted ✓</h2>
-            </div>
-            <div class="step-grid">
-                
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Get in Touch</h3>
-                    <p>Email ask@techiteasysupport.co.uk or message us on Facebook. We'll connect immediately.</p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>We Connect ✓</h3>
-                    <p>We discuss your issues and agree on a convenient time to visit your home.</p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Sorted ✓</h3>
-                    <p>I arrive, professionally fix the problem, and make sure you’re happy before I leave. Technology, made simple. ✓</p>
-                </div>
-
             </div>
         </div>
     </section>
@@ -366,30 +153,17 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-grid">
-                
                 <div class="footer-logo">
-                    <img src="logo.png" alt="Tech It Easy Support Logo" class="footer-logo-img">
-                    <p>Jargon-free home technology optimization and support for Essex. WiFi, streaming, and smart home — sorted. ✓</p>
+                    <img src="TECHITEASYLOGO.jpg" alt="Logo" class="footer-logo-img">
+                    <p>Jargon-free technology support for Essex. Sorted. ✓</p>
                 </div>
-
                 <div class="footer-contact">
                     <h4>Contact Glenn ✓</h4>
-                    <p>Email: ask@techiteasysupport.co.uk ✓</p>
-                    <p>Laindon | Canvey Island | Basildon | Essex ✓</p>
+                    <p>ask@techiteasysupport.co.uk</p>
                 </div>
-
-                <div class="footer-legal">
-                    <p>All tech support services are provided legitimately and professionally. ✓</p>
-                </div>
-
             </div>
-            
-            <div class="footer-cta">
-                <a href="#hero" class="btn">Ready to Get Sorted? ✓</a>
-            </div>
-
             <div class="footer-copyright">
-                <p>&copy; 2026 Tech It Easy Support. Registered in the UK. Fully Insured.</p>
+                <p>&copy; 2026 Tech It Easy Support. Fully Insured.</p>
             </div>
         </div>
     </footer>

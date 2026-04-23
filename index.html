@@ -4,35 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech It Easy Support | Expert Home Tech Solutions Across Essex</title>
-    <meta name="description" content="Expert home technology support across Essex. Specializing in entertainment setup, home office productivity, and digital security solutions.">
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #2D3A42; --accent: #97E33F; --white: #FFFFFF; --bg: #f4f7f6; --text: #333333; }
-        body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--bg); }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        :root { --primary: #2D3A42; --accent: #97E33F; --white: #FFFFFF; --bg: #f9f9f9; --text: #333333; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--bg); line-height: 1.8; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
         
-        header { background: var(--white); padding: 20px 0; border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
+        /* Header */
+        header { background: var(--white); padding: 25px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        
-        #hero { padding: 80px 0; text-align: center; background: var(--primary); color: white; }
-        .hero-sub { font-size: 1.2rem; margin-top: 10px; opacity: 0.9; }
-        .btn { display: inline-block; padding: 15px 30px; background: var(--accent); color: var(--primary); font-weight: 700; border-radius: 50px; text-decoration: none; margin-top: 25px; transition: 0.3s; }
+        .logo { height: 70px; }
+        .nav-phone { font-weight: 700; color: var(--primary); font-size: 1.2rem; text-decoration: none; }
+
+        /* Hero */
+        #hero { padding: 100px 0; text-align: center; background: var(--primary); color: white; }
+        h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
+        .hero-sub { font-size: 1.4rem; opacity: 0.9; margin-bottom: 30px; font-weight: 400; }
+        .btn { display: inline-block; padding: 18px 40px; background: var(--accent); color: var(--primary); font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.1rem; transition: 0.3s; }
         .btn:hover { background: #71b320; }
         
-        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { padding: 30px; border-radius: 15px; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .card h3 { margin-bottom: 15px; color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; }
+        /* Services */
+        #services { padding: 100px 0; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; color: var(--primary); }
+        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .card { padding: 40px; border-radius: 10px; background: white; border: 1px solid #e0e0e0; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .card h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .card p { color: #555; }
         
-        footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
+        footer { background: var(--primary); color: white; padding: 60px 0; text-align: center; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container nav-inner">
-            <img src="TECHITEASYLOGO.jpg" alt="Logo" style="height:50px;">
-            <nav><a href="tel:+447550007519" style="font-weight:700; color:var(--primary); text-decoration:none;">07550 007519</a></nav>
+            <img src="TECHITEASYLOGO.jpg" alt="Logo" class="logo">
+            <a href="tel:+447550007519" class="nav-phone">07550 007519</a>
         </div>
     </header>
 
@@ -40,21 +49,21 @@
         <div class="container">
             <h1>Your Home Technology, Expertly Managed.</h1>
             <p class="hero-sub">Cinematic Entertainment • Productive Workspaces • Digital Security</p>
-            <p style="margin-top:20px;">I streamline the tech in your Essex home so it simply works.</p>
+            <p>I streamline the tech in your Essex home so it simply works.</p>
             <a href="tel:+447550007519" class="btn">Call Glenn for a Consultation</a>
         </div>
     </section>
 
-    <section class="container">
-        <h2>How I Can Help You</h2>
+    <section id="services" class="container">
+        <h2 class="section-title">How I Can Help You</h2>
         <div class="pillar-grid">
             <div class="card">
                 <h3>🎬 Entertainment & Streaming</h3>
-                <p>Don't just watch TV—experience it. I curate your interface, remove ad-clutter, and consolidate your subscriptions. <em>(Includes TV wall mounting and physical setup as an optional add-on).</em></p>
+                <p>Don't just watch TV—experience it. I curate your interface, remove ad-clutter, and consolidate your subscriptions. <em>(Includes TV wall mounting as an optional add-on).</em></p>
             </div>
             <div class="card">
                 <h3>💻 Home Office & Productivity</h3>
-                <p>Maximize your efficiency. From ergonomic monitor setups and professional cable concealment to high-speed WiFi optimization, I ensure your workspace is stable and distraction-free.</p>
+                <p>Maximize your efficiency. From ergonomic monitor setups and professional cable concealment to WiFi network optimization, I ensure your workspace is stable and distraction-free.</p>
             </div>
             <div class="card">
                 <h3>🛡️ Digital Privacy & Security</h3>
@@ -67,7 +76,7 @@
         <div class="container">
             <h3>Ready to get started?</h3>
             <p>Call or WhatsApp Glenn: <strong>07550 007519</strong></p>
-            <p>Serving Essex & Surrounding Areas</p>
+            <p style="margin-top:10px; opacity: 0.7;">Serving Essex & Surrounding Areas</p>
         </div>
     </footer>
 

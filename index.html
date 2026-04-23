@@ -3,168 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech It Easy Support — Your Home Technology, Sorted in Essex.</title>
-    <meta name="description" content="Professional WiFi optimization, Smart TV mounting, and smart home support for Laindon, Canvey Island, Basildon, and across Essex. Jargon-free, fully insured, and reliable.">
+    <title>Tech It Easy Support | Expert Home Tech Solutions Across Essex</title>
+    <meta name="description" content="Expert home technology support across Essex. Specializing in entertainment setup, home office productivity, and digital security solutions.">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-
     <style>
-        :root {
-            --primary-color: #2D3A42;
-            --accent-green: #97E33F;
-            --accent-glow: #71B320;
-            --white: #FFFFFF;
-            --text-on-white: #333333;
-            --text-on-dark: #FFFFFF;
-            --main-font: 'Montserrat', sans-serif;
-            --transition: all 0.3s ease-in-out;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 100%; }
-        body { font-family: var(--main-font); line-height: 1.7; color: var(--text-on-white); background-color: var(--white); overflow-x: hidden; }
-        img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        ul { list-style: none; }
-        h1, h2, h3 { color: var(--primary-color); }
-
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        section { padding: 100px 20px; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 3rem; }
-
-        /* --- Header & Navigation --- */
-        header {
-            position: fixed; top: 0; width: 100%; height: 100px;
-            background-color: var(--white);
-            border-bottom: 2px solid var(--accent-green);
-            display: flex; align-items: center; z-index: 1000;
-        }
+        :root { --primary: #2D3A42; --accent: #97E33F; --white: #FFFFFF; --bg: #f4f7f6; --text: #333333; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--bg); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        header { background: var(--white); padding: 20px 0; border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 1000; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo-img { height: 70px; width: auto; }
-        .nav-links ul { display: flex; gap: 40px; }
-        .nav-links a { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px; }
-        .nav-links a:hover { color: var(--accent-green); }
-
-        /* --- Buttons --- */
-        .btn { display: inline-block; padding: 15px 30px; background-color: var(--accent-green); color: var(--primary-color); font-weight: 700; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; text-align: center; }
-        .btn:hover { background-color: var(--primary-color); color: var(--white); }
-        .btn-nav { padding: 12px 25px; }
-
-        /* --- Hero --- */
-        #hero {
-            height: 100vh;
-            background: radial-gradient(circle at center, #3A4A56 0%, var(--primary-color) 100%);
-            display: flex; align-items: center; justify-content: center; text-align: center;
-            color: var(--text-on-dark);
-            padding-top: 100px;
-        }
-        #hero h1 { font-size: 3.5rem; color: var(--text-on-dark); margin-bottom: 20px; }
-        #hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto 40px auto; opacity: 0.9; }
-
-        /* --- Services --- */
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-        .service-card {
-            background-color: var(--white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-radius: 20px;
-            padding: 50px;
-            text-align: center;
-        }
-        .icon-circle { width: 80px; height: 80px; margin: 0 auto 30px auto; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-glow); }
-        .service-icon-svg { width: 40px; height: 40px; fill: var(--accent-green); }
-
-        /* --- Trust --- */
-        #trust { background-color: var(--primary-color); color: var(--text-on-dark); }
-        #trust h2, #trust h3 { color: var(--text-on-dark); }
-        .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .trust-img-wrap img { border-radius: 20px; }
-
-        /* --- Footer --- */
-        footer { background-color: #1A2126; color: var(--text-on-dark); padding: 80px 0; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer-logo-img { height: 60px; margin-bottom: 20px;}
-
-        @media (max-width: 992px) {
-            .nav-links, .nav-cta { display: none; }
-            .trust-grid { grid-template-columns: 1fr; }
-            .section-header h2 { font-size: 2rem; }
-        }
+        
+        #hero { padding: 80px 0; text-align: center; background: var(--primary); color: white; }
+        .hero-sub { font-size: 1.2rem; margin-top: 10px; opacity: 0.9; }
+        .btn { display: inline-block; padding: 15px 30px; background: var(--accent); color: var(--primary); font-weight: 700; border-radius: 50px; text-decoration: none; margin-top: 25px; transition: 0.3s; }
+        .btn:hover { background: #71b320; }
+        
+        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { padding: 30px; border-radius: 15px; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .card h3 { margin-bottom: 15px; color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; }
+        
+        footer { background: var(--primary); color: white; padding: 40px 0; text-align: center; }
     </style>
 </head>
-
 <body>
 
     <header>
         <div class="container nav-inner">
-            <div class="logo">
-                <a href="#hero"><img src="TECHITEASYLOGO.jpg" alt="Tech It Easy Support Logo" class="logo-img"></a>
-            </div>
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="#frustration">Why Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#how-it-works">How We Help</a></li>
-                </ul>
-            </nav>
-            <div class="nav-cta">
-                <a href="#footer" class="btn btn-nav">Book Online</a>
-            </div>
+            <img src="TECHITEASYLOGO.jpg" alt="Logo" style="height:50px;">
+            <nav><a href="tel:+447550007519" style="font-weight:700; color:var(--primary); text-decoration:none;">07550 007519</a></nav>
         </div>
     </header>
 
     <section id="hero">
         <div class="container">
-            <h1>Tech It Easy — Your Home Technology, Sorted.</h1>
-            <p>Professional WiFi, Streaming, and Smart Home Support for Essex. Jargon-free, fully insured, and reliable.</p>
-            <div class="hero-btns">
-                <a href="#footer" class="btn">Book Your First Visit Today. ✓</a>
+            <h1>Your Home Technology, Expertly Managed.</h1>
+            <p class="hero-sub">Cinematic Entertainment • Productive Workspaces • Digital Security</p>
+            <p style="margin-top:20px;">I streamline the tech in your Essex home so it simply works.</p>
+            <a href="tel:+447550007519" class="btn">Call Glenn for a Consultation</a>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>How I Can Help You</h2>
+        <div class="pillar-grid">
+            <div class="card">
+                <h3>🎬 Entertainment & Streaming</h3>
+                <p>Don't just watch TV—experience it. I curate your interface, remove ad-clutter, and consolidate your subscriptions. <em>(Includes TV wall mounting and physical setup as an optional add-on).</em></p>
+            </div>
+            <div class="card">
+                <h3>💻 Home Office & Productivity</h3>
+                <p>Maximize your efficiency. From ergonomic monitor setups and professional cable concealment to high-speed WiFi optimization, I ensure your workspace is stable and distraction-free.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Digital Privacy & Security</h3>
+                <p>Protect what matters. I configure hardened password managers, multi-factor authentication, and privacy-focused VPN setups to keep your home network and personal accounts secure.</p>
             </div>
         </div>
     </section>
 
-    <section id="services">
+    <footer>
         <div class="container">
-            <div class="section-header">
-                <h2>Our Core Services ✓</h2>
-            </div>
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="icon-circle"><svg class="service-icon-svg" viewBox="0 0 512 512"><path d="M480 306.2c0 24.5-19.8 44.2-44.2 44.2H320v-40h115.8c11.6 0 20.8-9.2 20.8-20.8s-9.2-20.8-20.8-20.8H320V120H192v148.2h-35.8C144.6 268.2 136 277 136 288.6s9.2 20.8 20.8 20.8H192v40h-75.8C91.8 350.4 72 330.6 72 306.2s19.8-44.2 44.2-44.2H192V120h-75.8C91.8 120 72 100.2 72 75.8S91.8 32 116.2 32h279.6C420.2 32 440 51.8 440 76.2s-19.8 44.2-44.2 44.2H320V262h75.8C420.2 262 440 281.8 440 306.2zM280 200V120H192v80h88z"/></svg></div>
-                    <h3>WiFi & Connectivity</h3>
-                    <p>Stop the buffering. Optimize your router placement for whole-home coverage.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon-circle"><svg class="service-icon-svg" viewBox="0 0 576 512"><path d="M512 0H64C28.6 0 0 28.6 0 64v288c0 35.4 28.6 64 64 64h128v64H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96v-64h128c35.4 0 64-28.6 64-64V64c0-35.4-28.6-64-64-64zM512 352c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32h416c17.7 0 32 14.3 32 32v288zM416 112H160c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32z"/></svg></div>
-                    <h3>Streaming & TV Setup</h3>
-                    <p>From wall mounting that new Smart TV to app configuration—we handle it all.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon-circle"><svg class="service-icon-svg" viewBox="0 0 640 512"><path d="M608 64c0-17.7-14.3-32-32-32H64C28.6 0 0 28.6 0 64v320c0 35.4 28.6 64 64 64h128v64H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96v-64h128c35.4 0 64-28.6 64-64V64c0-35.4-28.6-64-64-64zM512 352H64V64h416v288zM160 112H416v32H160zm112 112h80v80h-80z"/></svg></div>
-                    <h3>Smart Home Integration</h3>
-                    <p>Lights, security, and hubs. We connect your devices so they actually work together.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-logo">
-                    <img src="TECHITEASYLOGO.jpg" alt="Logo" class="footer-logo-img">
-                    <p>Jargon-free technology support for Essex. Sorted. ✓</p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact Glenn ✓</h4>
-                    <p>ask@techiteasysupport.co.uk</p>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2026 Tech It Easy Support. Fully Insured.</p>
-            </div>
+            <h3>Ready to get started?</h3>
+            <p>Call or WhatsApp Glenn: <strong>07550 007519</strong></p>
+            <p>Serving Essex & Surrounding Areas</p>
         </div>
     </footer>
 

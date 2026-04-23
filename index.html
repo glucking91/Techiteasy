@@ -3,37 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech It Easy Support | Expert Home Tech Solutions Across Essex</title>
+    <title>Tech It Easy Support | Essex Home Tech Expert</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #2D3A42; --accent: #97E33F; --white: #FFFFFF; --bg: #f9f9f9; --text: #333333; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--bg); line-height: 1.8; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
         
         /* Header */
-        header { background: var(--white); padding: 25px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        header { background: var(--white); padding: 20px 0; border-bottom: 1px solid #eee; }
         .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { height: 70px; }
-        .nav-phone { font-weight: 700; color: var(--primary); font-size: 1.2rem; text-decoration: none; }
+        .logo { height: 60px; }
+        .nav-phone { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
 
         /* Hero */
-        #hero { padding: 100px 0; text-align: center; background: var(--primary); color: white; }
-        h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 20px; line-height: 1.2; }
-        .hero-sub { font-size: 1.4rem; opacity: 0.9; margin-bottom: 30px; font-weight: 400; }
-        .btn { display: inline-block; padding: 18px 40px; background: var(--accent); color: var(--primary); font-weight: 700; border-radius: 5px; text-decoration: none; font-size: 1.1rem; transition: 0.3s; }
-        .btn:hover { background: #71b320; }
+        #hero { padding: 80px 0; text-align: center; background: var(--primary); color: white; }
+        h1 { font-size: 3rem; margin-bottom: 15px; line-height: 1.2; }
+        .hero-sub { font-size: 1.3rem; opacity: 0.9; margin-bottom: 30px; }
+        .btn-group { display: flex; gap: 15px; justify-content: center; }
+        .btn { padding: 18px 30px; border-radius: 5px; font-weight: 700; text-decoration: none; transition: 0.3s; }
+        .btn-primary { background: var(--accent); color: var(--primary); }
+        .btn-secondary { background: transparent; border: 2px solid white; color: white; }
+
+        /* Trust Bar */
+        .trust-bar { background: #f0f0f0; padding: 20px 0; text-align: center; font-weight: 600; color: #555; }
+
+        /* Services & How it works */
+        section { padding: 80px 0; }
+        h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: var(--primary); }
+        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { padding: 30px; background: white; border: 1px solid #ddd; border-radius: 8px; }
         
-        /* Services */
-        #services { padding: 100px 0; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; color: var(--primary); }
-        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { padding: 40px; border-radius: 10px; background: white; border: 1px solid #e0e0e0; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .card h3 { font-size: 1.5rem; margin-bottom: 20px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
-        .card p { color: #555; }
-        
-        footer { background: var(--primary); color: white; padding: 60px 0; text-align: center; }
+        /* How it works */
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .step-box { text-align: center; padding: 20px; }
+
+        /* About Glenn */
+        .about-section { background: white; padding: 60px; border-radius: 10px; border: 1px solid #eee; }
     </style>
 </head>
 <body>
@@ -41,42 +48,66 @@
     <header>
         <div class="container nav-inner">
             <img src="TECHITEASYLOGO.jpg" alt="Logo" class="logo">
-            <a href="tel:+447550007519" class="nav-phone">07550 007519</a>
+            <span class="nav-phone">07550 007519</span>
         </div>
     </header>
 
     <section id="hero">
         <div class="container">
-            <h1>Your Home Technology, Expertly Managed.</h1>
-            <p class="hero-sub">Cinematic Entertainment • Productive Workspaces • Digital Security</p>
-            <p>I streamline the tech in your Essex home so it simply works.</p>
-            <a href="tel:+447550007519" class="btn">Call Glenn for a Consultation</a>
+            <h1>Simple, Reliable Home Tech — Without the Headaches.</h1>
+            <p class="hero-sub">No more slow WiFi or confusing menus. I fix your tech, so you don't have to.</p>
+            <div class="btn-group">
+                <a href="tel:+447550007519" class="btn btn-primary">Call Glenn Now</a>
+                <a href="https://wa.me/447550007519" class="btn btn-secondary">WhatsApp Me</a>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="container">
-        <h2 class="section-title">How I Can Help You</h2>
-        <div class="pillar-grid">
-            <div class="card">
-                <h3>🎬 Entertainment & Streaming</h3>
-                <p>Don't just watch TV—experience it. I curate your interface, remove ad-clutter, and consolidate your subscriptions. <em>(Includes TV wall mounting as an optional add-on).</em></p>
+    <div class="trust-bar">
+        ✓ Fully Insured  •  ✓ Local to Essex  •  ✓ Reliable Service
+    </div>
+
+    <section id="services">
+        <div class="container">
+            <h2>How I Can Help You</h2>
+            <div class="pillar-grid">
+                <div class="card">
+                    <h3>🎬 Entertainment</h3>
+                    <p>Perfect TV & streaming setup. No buffering, no annoying ads, and simple menus—everything just works in one place.</p>
+                </div>
+                <div class="card">
+                    <h3>💻 Workspace</h3>
+                    <p>Fast, reliable WiFi in every room. I optimize your setup for work or gaming so you can stop fighting with your connection.</p>
+                </div>
+                <div class="card">
+                    <h3>🛡️ Security</h3>
+                    <p>Peace of mind. I secure your accounts, passwords, and devices so you can browse and shop without worrying about scams.</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>💻 Home Office & Productivity</h3>
-                <p>Maximize your efficiency. From ergonomic monitor setups and professional cable concealment to WiFi network optimization, I ensure your workspace is stable and distraction-free.</p>
+        </div>
+    </section>
+
+    <section style="background: #f4f7f6;">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step-box"><h3>1. Reach Out</h3><p>Call or WhatsApp me about the issue.</p></div>
+                <div class="step-box"><h3>2. I Assess</h3><p>I diagnose the problem at your home.</p></div>
+                <div class="step-box"><h3>3. Optimized</h3><p>Everything is set up to work perfectly.</p></div>
             </div>
-            <div class="card">
-                <h3>🛡️ Digital Privacy & Security</h3>
-                <p>Protect what matters. I configure hardened password managers, multi-factor authentication, and privacy-focused VPN setups to keep your home network and personal accounts secure.</p>
-            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="about-section">
+            <h2>Hi, I'm Glenn.</h2>
+            <p>I help homeowners across Essex simplify their tech. I’m not about "selling you more gear"—I’m about making the tech you already own work exactly how it should. Friendly, jargon-free, and always professional.</p>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <h3>Ready to get started?</h3>
-            <p>Call or WhatsApp Glenn: <strong>07550 007519</strong></p>
-            <p style="margin-top:10px; opacity: 0.7;">Serving Essex & Surrounding Areas</p>
+            <p>Ready to get started? <strong>Call or WhatsApp Glenn: 07550 007519</strong></p>
         </div>
     </footer>
 

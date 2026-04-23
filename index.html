@@ -1,115 +1,210 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech It Easy Support | Essex Home Tech Expert</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --primary: #2D3A42; --accent: #97E33F; --white: #FFFFFF; --bg: #f9f9f9; --text: #333333; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--bg); line-height: 1.8; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
-        
-        /* Header */
-        header { background: var(--white); padding: 20px 0; border-bottom: 1px solid #eee; }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .logo { height: 60px; }
-        .nav-phone { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech It Easy | Home Tech Support in Essex</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1c2b3a;--navy2:#243447;
+  --green:#3a7d44;--green2:#4e9c5a;--green-pale:#eaf5ec;
+  --lime:#97E33F;
+  --cream:#f7f6f2;--white:#ffffff;
+  --txt:#1c2b3a;--txt2:#4a5568;--txt3:#718096;
+  --border:#dde3ea;
+}
+body{font-family:'DM Sans',sans-serif;color:var(--txt);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
 
-        /* Hero */
-        #hero { padding: 80px 0; text-align: center; background: var(--primary); color: white; }
-        h1 { font-size: 3rem; margin-bottom: 15px; line-height: 1.2; }
-        .hero-sub { font-size: 1.3rem; opacity: 0.9; margin-bottom: 30px; }
-        .btn-group { display: flex; gap: 15px; justify-content: center; }
-        .btn { padding: 18px 30px; border-radius: 5px; font-weight: 700; text-decoration: none; transition: 0.3s; }
-        .btn-primary { background: var(--accent); color: var(--primary); }
-        .btn-secondary { background: transparent; border: 2px solid white; color: white; }
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo-img{max-height:40px;width:auto;}
+.nav-r{display:flex;align-items:center;gap:1.25rem}
+.nav-tel{font-size:.9rem;font-weight:500;color:var(--txt2);text-decoration:none}
+.nav-btn{background:var(--green);color:#fff;padding:.55rem 1.25rem;border-radius:7px;font-size:.9rem;font-weight:500;text-decoration:none;transition:background .2s}
+.nav-btn:hover{background:var(--green2)}
 
-        /* Trust Bar */
-        .trust-bar { background: #f0f0f0; padding: 20px 0; text-align: center; font-weight: 600; color: #555; }
+/* HERO & OTHER STYLES */
+.hero{background:var(--navy);color:#fff;padding:96px 6% 88px;position:relative;overflow:hidden}
+.hero-c1{position:absolute;top:-80px;right:-80px;width:480px;height:480px;border-radius:50%;border:70px solid rgba(151,227,63,.1);pointer-events:none}
+.hero-c2{position:absolute;bottom:-100px;left:38%;width:320px;height:320px;border-radius:50%;border:50px solid rgba(255,255,255,.04);pointer-events:none}
+.hero-inner{max-width:780px;position:relative;z-index:1}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(151,227,63,.15);border:1px solid rgba(151,227,63,.35);color:#b8f07a;font-size:.78rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:.38rem .9rem;border-radius:100px;margin-bottom:1.8rem}
+.pill-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);flex-shrink:0}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(2.5rem,5.5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.035em;margin-bottom:1.4rem}
+.hero h1 em{font-style:italic;color:#b8f07a}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.68);max-width:520px;margin-bottom:2.5rem;line-height:1.7}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-lime{background:var(--lime);color:var(--navy);padding:.88rem 2rem;border-radius:8px;font-size:.98rem;font-weight:700;text-decoration:none;transition:opacity .2s,transform .15s;display:inline-block}
+.btn-lime:hover{opacity:.9;transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.32);padding:.88rem 2rem;border-radius:8px;font-size:.98rem;font-weight:500;text-decoration:none;transition:border-color .2s,background .2s;display:inline-block}
+.btn-ghost:hover{border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.06)}
 
-        /* Services & How it works */
-        section { padding: 80px 0; }
-        h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: var(--primary); }
-        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { padding: 30px; background: white; border: 1px solid #ddd; border-radius: 8px; }
-        
-        /* How it works */
-        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .step-box { text-align: center; padding: 20px; }
+/* TRUST */
+.trust{background:var(--cream);border-bottom:1px solid var(--border);padding:1.1rem 6%}
+.trust-list{display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;list-style:none}
+.trust-list li{display:flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:500;color:var(--txt2)}
+.chk{width:20px;height:20px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chk::after{content:'';display:block;width:8px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translateY(-1px)}
 
-        /* About Glenn */
-        .about-section { background: white; padding: 60px; border-radius: 10px; border: 1px solid #eee; }
-    </style>
+/* SHARED SECTIONS */
+.section{padding:88px 6%}
+.lbl{font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.65rem}
+.h2{font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.5vw,2.65rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;color:var(--navy);margin-bottom:2.8rem}
+
+/* SERVICES */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.card{border:1.5px solid var(--border);border-radius:14px;padding:2rem 1.75rem;background:#fff;transition:border-color .2s,box-shadow .2s}
+.card:hover{border-color:var(--green);box-shadow:0 8px 28px rgba(58,125,68,.1)}
+.card-ico{width:50px;height:50px;background:var(--green-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem}
+.card h3{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:.55rem;letter-spacing:-.02em}
+.card p{font-size:.94rem;color:var(--txt2);line-height:1.65}
+
+/* HOW IT WORKS */
+.how{background:var(--navy);color:#fff;padding:88px 6%}
+.how .lbl{color:#b8f07a}
+.how .h2{color:#fff}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.steps::before{content:'';position:absolute;top:29px;left:calc(100%/6);right:calc(100%/6);height:1px;background:rgba(255,255,255,.14)}
+.step{padding:0 2.2rem;position:relative}
+.step:first-child{padding-left:0}
+.step:last-child{padding-right:0}
+.step-n{width:58px;height:58px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:1.4rem;position:relative;z-index:1}
+.step h3{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:600;margin-bottom:.55rem;letter-spacing:-.02em}
+.step p{font-size:.94rem;color:rgba(255,255,255,.62);line-height:1.65}
+
+/* ABOUT SECTION - REFINED */
+.about{padding:88px 6%;background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:5fr 6fr;gap:5rem;align-items:center}
+.about-photo{width:100%;border-radius:20px;object-fit:cover;aspect-ratio:4/5;}
+.about-text .h2{margin-bottom:1.1rem}
+.about-text p{font-size:1rem;color:var(--txt2);line-height:1.72;margin-bottom:1.1rem}
+
+/* REVIEWS & FOOTER (Styles remain the same as your source) */
+.reviews{padding:88px 6%}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.8rem}
+.review{background:var(--cream);border-radius:14px;padding:1.8rem}
+.stars{display:flex;gap:3px;margin-bottom:1rem}
+.star{width:14px;height:14px;background:#f59e0b;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.review q{display:block;font-size:.95rem;color:var(--txt2);line-height:1.65;font-style:italic;margin-bottom:1.1rem;quotes:"\201C""\201D"}
+.r-name{font-size:.85rem;font-weight:500;color:var(--txt)}
+.r-loc{font-size:.8rem;color:var(--txt3)}
+
+.cta{background:var(--green);color:#fff;padding:80px 6%;text-align:center}
+.cta h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;letter-spacing:-.03em;margin-bottom:.75rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--green);padding:.88rem 2rem;border-radius:8px;font-size:.98rem;font-weight:700;text-decoration:none}
+
+footer{background:var(--navy);padding:2.2rem 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem;color:rgba(255,255,255,.45)}
+footer .logo{font-family:'Fraunces',serif;font-size:1.1rem;color:#fff;text-decoration:none}
+footer a{color:rgba(255,255,255,.45);text-decoration:none}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="container nav-inner">
-            <img src="TECHITEASYLOGO.jpg" alt="Logo" class="logo">
-            <span class="nav-phone">07550 007519</span>
-        </div>
-    </header>
+<nav>
+  <a href="#" class="logo">Tech It <span>Easy</span></a>
+  <div class="nav-r">
+    <a href="tel:07550007519" class="nav-tel">07550 007519</a>
+    <a href="tel:07550007519" class="nav-btn">Call Glenn</a>
+  </div>
+</nav>
 
-    <section id="hero">
-        <div class="container">
-            <h1>Simple, Reliable Home Tech — Without the Headaches.</h1>
-            <p class="hero-sub">No more slow WiFi or confusing menus. I fix your tech, so you don't have to.</p>
-            <div class="btn-group">
-                <a href="tel:+447550007519" class="btn btn-primary">Call Glenn Now</a>
-                <a href="https://wa.me/447550007519" class="btn btn-secondary">WhatsApp Me</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="trust-bar">
-        ✓ Fully Insured  •  ✓ Local to Essex  •  ✓ Reliable Service
+<section class="hero">
+  <div class="hero-c1"></div>
+  <div class="hero-c2"></div>
+  <div class="hero-inner">
+    <div class="hero-pill"><span class="pill-dot"></span>Serving Essex &amp; surrounding areas</div>
+    <h1>Home tech that<br><em>just works.</em></h1>
+    <p class="hero-sub">Slow Wi-Fi, confusing smart TVs, dodgy connections — I fix it all. No jargon, no upselling. Just reliable tech you can actually enjoy.</p>
+    <div class="hero-btns">
+      <a href="tel:+447550007519" class="btn-lime">&#128222;&nbsp; Call Glenn — 07550 007519</a>
+      <a href="https://wa.me/447550007519" class="btn-ghost">WhatsApp Me</a>
     </div>
+  </div>
+</section>
 
-    <section id="services">
-        <div class="container">
-            <h2>How I Can Help You</h2>
-            <div class="pillar-grid">
-                <div class="card">
-                    <h3>🎬 Entertainment</h3>
-                    <p>Perfect TV & streaming setup. No buffering, no annoying ads, and simple menus—everything just works in one place.</p>
-                </div>
-                <div class="card">
-                    <h3>💻 Workspace</h3>
-                    <p>Fast, reliable WiFi in every room. I optimize your setup for work or gaming so you can stop fighting with your connection.</p>
-                </div>
-                <div class="card">
-                    <h3>🛡️ Security</h3>
-                    <p>Peace of mind. I secure your accounts, passwords, and devices so you can browse and shop without worrying about scams.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="trust">
+  <ul class="trust-list">
+    <li><span class="chk"></span>Fully insured</li>
+    <li><span class="chk"></span>Local to Essex</li>
+    <li><span class="chk"></span>No jargon, ever</li>
+    <li><span class="chk"></span>5-star rated service</li>
+  </ul>
+</div>
 
-    <section style="background: #f4f7f6;">
-        <div class="container">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step-box"><h3>1. Reach Out</h3><p>Call or WhatsApp me about the issue.</p></div>
-                <div class="step-box"><h3>2. I Assess</h3><p>I diagnose the problem at your home.</p></div>
-                <div class="step-box"><h3>3. Optimized</h3><p>Everything is set up to work perfectly.</p></div>
-            </div>
-        </div>
-    </section>
+<section class="section">
+  <p class="lbl">What I do</p>
+  <h2 class="h2">How I can help you</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="card-ico">📺</div>
+      <h3>TV &amp; Streaming</h3>
+      <p>Perfect picture, zero buffering, simple menus. I set up your smart TV and streaming apps so everything works in one place — no fuss.</p>
+    </div>
+    <div class="card">
+      <div class="card-ico">📶</div>
+      <h3>Wi-Fi &amp; Networking</h3>
+      <p>Fast, reliable signal in every room. I find dead spots, optimise your router, and get every device in the house connected properly.</p>
+    </div>
+    <div class="card">
+      <div class="card-ico">🔒</div>
+      <h3>Security &amp; Peace of Mind</h3>
+      <p>I lock down your accounts, passwords, and devices so you can browse, shop, and bank online without worrying about scams.</p>
+    </div>
+  </div>
+</section>
 
-    <section class="container">
-        <div class="about-section">
-            <h2>Hi, I'm Glenn.</h2>
-            <p>I help homeowners across Essex simplify their tech. I’m not about "selling you more gear"—I’m about making the tech you already own work exactly how it should. Friendly, jargon-free, and always professional.</p>
-        </div>
-    </section>
+<section class="how">
+  <p class="lbl">Simple process</p>
+  <h2 class="h2">How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <h3>Reach out</h3>
+      <p>Call or WhatsApp me with your problem. I'll ask a few quick questions so I understand what's going on before I arrive.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <h3>I come to you</h3>
+      <p>I visit your home at a time that suits you, diagnose the issue on the spot, and explain everything in plain English.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <h3>All sorted</h3>
+      <p>Your tech is fixed, set up properly, and working exactly as it should. I don't leave until you're happy with it.</p>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <p>Ready to get started? <strong>Call or WhatsApp Glenn: 07550 007519</strong></p>
-        </div>
-    </footer>
+<section class="about">
+  <div class="about-grid">
+    <img src="glenn-profile.jpg" alt="Glenn Tech Support" class="about-photo">
+    <div class="about-text">
+      <p class="lbl">About me</p>
+      <h2 class="h2">Hi, I'm Glenn.</h2>
+      <p>I help homeowners across Essex simplify their tech. I'm not here to sell you new gear — I'm here to make what you already own work the way it should.</p>
+      <p>Whether it's a TV that won't connect, Wi-Fi that drops out, or a laptop that runs like a snail — I've fixed it before, and I can fix yours. Friendly, straight-talking, and always professional.</p>
+      <a href="tel:+447550007519" class="btn-lime" style="font-size:.95rem;padding:.8rem 1.8rem">Get in touch today</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to sort your tech?</h2>
+  <p>Call or WhatsApp me — I'll get it fixed at a time that suits you.</p>
+  <div class="cta-btns">
+    <a href="tel:+447550007519" class="btn-white">&#128222;&nbsp; 07550 007519</a>
+    <a href="https://wa.me/447550007519" class="btn-ghost-w">WhatsApp Me</a>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="logo">Tech It <span style="color:var(--green)">Easy</span></a>
+  <span>Fully insured &bull; Local to Essex</span>
+  <span>&copy; 2026 Tech It Easy</span>
+</footer>
 
 </body>
 </html>

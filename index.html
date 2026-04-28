@@ -19,7 +19,7 @@
 body{font-family:'DM Sans',sans-serif;color:var(--txt);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:80px}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:90px}
 .logo-img{max-height:80px;width:auto}
 .nav-r{display:flex;align-items:center;gap:1.25rem}
 .nav-tel{font-size:.9rem;font-weight:500;color:var(--txt2);text-decoration:none}
@@ -27,8 +27,15 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-
 .nav-btn{background:var(--green);color:#fff;padding:.55rem 1.25rem;border-radius:7px;font-size:.9rem;font-weight:500;text-decoration:none;transition:background .2s}
 .nav-btn:hover{background:var(--green2)}
 
-/* HERO */
-.hero{background:var(--navy);color:#fff;padding:96px 6% 88px;position:relative;overflow:hidden}
+/* HERO - UPDATED WITH LIFESTYLE IMAGE */
+.hero{
+  padding:96px 6% 88px;position:relative;overflow:hidden;
+  background: linear-gradient(rgba(28, 43, 58, 0.85), rgba(28, 43, 58, 0.85)), 
+              url('https://images.unsplash.com/photo-1593696140826-c58b021acf8b?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  color:#fff;
+}
 .hero-c1{position:absolute;top:-80px;right:-80px;width:480px;height:480px;border-radius:50%;border:70px solid rgba(151,227,63,.1);pointer-events:none}
 .hero-c2{position:absolute;bottom:-100px;left:38%;width:320px;height:320px;border-radius:50%;border:50px solid rgba(255,255,255,.04);pointer-events:none}
 .hero-inner{max-width:780px;position:relative;z-index:1}
@@ -36,9 +43,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-
 .pill-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);flex-shrink:0}
 .hero h1{font-family:'Fraunces',serif;font-size:clamp(2.5rem,5.5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.035em;margin-bottom:1.4rem}
 .hero h1 em{font-style:italic;color:#b8f07a}
-.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.68);max-width:520px;margin-bottom:1.8rem;line-height:1.7}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.8);max-width:520px;margin-bottom:1.8rem;line-height:1.7}
 
-/* PRICING NUDGE */
 .hero-pricing{display:flex;align-items:center;gap:1.5rem;margin-bottom:2.2rem;flex-wrap:wrap}
 .price-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:.55rem 1rem;font-size:.9rem;color:rgba(255,255,255,.85)}
 .price-badge strong{color:#fff;font-weight:700}
@@ -49,12 +55,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-
 .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.32);padding:.88rem 2rem;border-radius:8px;font-size:.98rem;font-weight:500;text-decoration:none;transition:border-color .2s,background .2s;display:inline-block}
 .btn-ghost:hover{border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.06)}
 
-/* TRUST */
+/* TRUST ICONS */
 .trust{background:var(--cream);border-bottom:1px solid var(--border);padding:1.1rem 6%}
 .trust-list{display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;list-style:none}
 .trust-list li{display:flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:500;color:var(--txt2)}
-.chk{width:20px;height:20px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.chk::after{content:'';display:block;width:8px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translateY(-1px)}
+.trust-icon{width:22px;height:22px;fill:var(--green)}
 
 /* SHARED */
 .section{padding:88px 6%}
@@ -153,12 +158,17 @@ footer .logo span{color:var(--green)}
 .footer-links a{color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:#fff}
 
+/* STICKY MOBILE CTA */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;width:100%;background:#fff;padding:12px 6%;gap:10px;z-index:1000;box-shadow:0 -4px 12px rgba(0,0,0,0.1)}
+.sticky-cta a{flex:1;text-align:center;padding:12px;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.9rem}
+
 @media(max-width:820px){
+  .sticky-cta{display:flex}
+  .nav-tel{display:none}
   .cards,.steps,.review-grid,.contact-grid,.form-row{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .steps::before{display:none}
   .step{padding:0;margin-bottom:2rem}
-  .nav-tel{display:none}
   .about-photo{max-width:100%;aspect-ratio:4/3}
 }
 </style>
@@ -174,8 +184,6 @@ footer .logo span{color:var(--green)}
 </nav>
 
 <section class="hero">
-  <div class="hero-c1"></div>
-  <div class="hero-c2"></div>
   <div class="hero-inner">
     <div class="hero-pill"><span class="pill-dot"></span>Serving Essex &amp; surrounding areas</div>
     <h1>Home tech that<br><em>just works.</em></h1>
@@ -193,10 +201,10 @@ footer .logo span{color:var(--green)}
 
 <div class="trust">
   <ul class="trust-list">
-    <li><span class="chk"></span>Fully insured</li>
-    <li><span class="chk"></span>Local to Essex</li>
-    <li><span class="chk"></span>No jargon, ever</li>
-    <li><span class="chk"></span>5-star rated service</li>
+    <li><svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z"/></svg> Fully insured</li>
+    <li><svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z"/></svg> Local to Essex</li>
+    <li><svg class="trust-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg> No jargon, ever</li>
+    <li><svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5-star rated</li>
   </ul>
 </div>
 
@@ -300,83 +308,4 @@ footer .logo span{color:var(--green)}
         <div class="contact-icon">💬</div>
         <div class="contact-item-text">
           <strong>WhatsApp</strong>
-          <a href="https://wa.me/447550007519">Message me on WhatsApp</a>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div class="contact-item-text">
-          <strong>Service area</strong>
-          <span>Essex &amp; surrounding areas</span>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🕐</div>
-        <div class="contact-item-text">
-          <strong>Hours</strong>
-          <span>Mon–Sat, 8am–7pm</span>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">💷</div>
-        <div class="contact-item-text">
-          <strong>Pricing</strong>
-          <span>Free phone consultation · Jobs from £40</span>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <form action="https://formspree.io/f/meevvryv" method="POST" class="form">
-        <div class="form-row">
-          <div>
-            <label for="name">Your name</label>
-            <input type="text" name="name" id="name" placeholder="e.g. Sarah Jones" autocomplete="name" required>
-          </div>
-          <div>
-            <label for="phone">Phone number</label>
-            <input type="tel" name="phone" id="phone" placeholder="e.g. 07700 900000" autocomplete="tel" required>
-          </div>
-        </div>
-        <div>
-          <label for="service">What do you need help with?</label>
-          <select name="service" id="service">
-            <option value="" disabled selected>Select a service</option>
-            <option>TV &amp; Streaming setup</option>
-            <option>Wi-Fi &amp; Networking</option>
-            <option>Device security</option>
-            <option>General tech support</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div>
-          <label for="message">Tell me a bit more (optional)</label>
-          <textarea name="message" id="message" placeholder="Describe the issue — the more detail the better..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send message ↗</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <h2>Ready to sort your tech?</h2>
-  <p>Free phone consultation — I'll let you know if I can help before you book.</p>
-  <div class="cta-btns">
-    <a href="tel:+447550007519" class="btn-white">&#128222;&nbsp; 07550 007519</a>
-    <a href="https://wa.me/447550007519" class="btn-ghost-w">WhatsApp Me</a>
-  </div>
-</section>
-
-<footer>
-  <a href="#" class="logo">Tech It <span>Easy</span></a>
-  <div class="footer-links">
-    <a href="tel:+447550007519">07550 007519</a>
-    <a href="https://wa.me/447550007519">WhatsApp</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <span>Fully insured &bull; Local to Essex &bull; &copy; 2026 Tech It Easy</span>
-</footer>
-
-</body>
-</html>
+          <a href="https://wa.

@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- STEP 3: Meta description + OG tags -->
+<meta name="description" content="Home tech support across Essex. Glenn fixes Wi-Fi, smart TVs, streaming and online security for homeowners. Friendly, jargon-free service. No Fix, No Fee. Call 07550 007519.">
+<meta property="og:title" content="Tech It Easy | Home Tech Support Essex">
+<meta property="og:description" content="Friendly, local tech support for Essex homeowners. Wi-Fi, smart TVs, streaming, security and more. No Fix, No Fee. Call Glenn on 07550 007519.">
+<meta property="og:image" content="glenn-profile.jpg">
+<meta property="og:type" content="website">
 <title>Home Tech Support Essex | WiFi, TV &amp; Device Setup | Tech It Easy</title>
 <link rel="icon" href="TECHITEASYLOGO.jpg" type="image/jpeg">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -27,7 +33,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-
 .nav-btn{background:var(--green);color:#fff;padding:.55rem 1.25rem;border-radius:7px;font-size:.9rem;font-weight:500;text-decoration:none;transition:background .2s}
 .nav-btn:hover{background:var(--green2)}
 
-/* HERO - UPDATED WITH LIFESTYLE IMAGE */
+/* HERO */
 .hero{
   padding:96px 6% 88px;position:relative;overflow:hidden;
   background: linear-gradient(rgba(28, 43, 58, 0.85), rgba(28, 43, 58, 0.85)), 
@@ -39,6 +45,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-
 .hero-c1{position:absolute;top:-80px;right:-80px;width:480px;height:480px;border-radius:50%;border:70px solid rgba(151,227,63,.1);pointer-events:none}
 .hero-c2{position:absolute;bottom:-100px;left:38%;width:320px;height:320px;border-radius:50%;border:50px solid rgba(255,255,255,.04);pointer-events:none}
 .hero-inner{max-width:780px;position:relative;z-index:1}
+/* STEP 1: Glenn's photo floating right in hero */
+.hero-photo{position:absolute;right:0;bottom:-60px;width:320px;height:420px;object-fit:cover;object-position:top;border-radius:20px 20px 0 0;box-shadow:0 20px 60px rgba(0,0,0,.35);z-index:2}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(151,227,63,.15);border:1px solid rgba(151,227,63,.35);color:#b8f07a;font-size:.78rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;padding:.38rem .9rem;border-radius:100px;margin-bottom:1.8rem}
 .pill-dot{width:7px;height:7px;border-radius:50%;background:var(--lime);flex-shrink:0}
 .hero h1{font-family:'Fraunces',serif;font-size:clamp(2.5rem,5.5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.035em;margin-bottom:1.4rem}
@@ -72,7 +80,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-
 .card:hover{border-color:var(--green);box-shadow:0 8px 28px rgba(58,125,68,.1)}
 .card-ico{width:50px;height:50px;background:var(--green-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem}
 .card h3{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:.55rem;letter-spacing:-.02em}
-.card p{font-size:.94rem;color:var(--txt2);line-height:1.65}
+/* STEP 6: Larger card text */
+.card p{font-size:1rem;color:var(--txt2);line-height:1.7}
 
 /* HOW IT WORKS */
 .how{background:var(--navy);color:#fff;padding:88px 6%}
@@ -85,7 +94,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-
 .step:last-child{padding-right:0}
 .step-n{width:58px;height:58px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:1.4rem;position:relative;z-index:1}
 .step h3{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:600;margin-bottom:.55rem;letter-spacing:-.02em}
-.step p{font-size:.94rem;color:rgba(255,255,255,.62);line-height:1.65}
+/* STEP 6: Larger step text */
+.step p{font-size:1rem;color:rgba(255,255,255,.62);line-height:1.7}
 
 /* ABOUT */
 .about{padding:88px 6%;background:var(--cream)}
@@ -102,7 +112,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-
 .review{background:var(--cream);border-radius:14px;padding:1.8rem}
 .stars{display:flex;gap:3px;margin-bottom:1rem}
 .star{width:14px;height:14px;background:#f59e0b;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-.review q{display:block;font-size:.95rem;color:var(--txt2);line-height:1.65;font-style:italic;margin-bottom:1.1rem;quotes:"\201C""\201D"}
+/* STEP 6: Larger review text */
+.review q{display:block;font-size:1rem;color:var(--txt2);line-height:1.7;font-style:italic;margin-bottom:1.1rem;quotes:"\201C""\201D"}
 .review q::before{content:open-quote}
 .review q::after{content:close-quote}
 .r-name{font-size:.85rem;font-weight:500;color:var(--txt)}
@@ -136,7 +147,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-
 .form input::placeholder,.form textarea::placeholder{color:rgba(255,255,255,.3)}
 .form input:focus,.form textarea:focus,.form select:focus{border-color:rgba(151,227,63,.6);background:rgba(255,255,255,.1)}
 .form select option{background:var(--navy);color:#fff}
-.form textarea{resize:vertical;min-height:120px}
 .form-submit{background:var(--lime);color:var(--navy);border:none;padding:.9rem 2rem;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.98rem;font-weight:700;cursor:pointer;transition:opacity .2s,transform .15s;text-align:center;width:100%}
 .form-submit:hover{opacity:.9;transform:translateY(-1px)}
 
@@ -158,9 +168,10 @@ footer .logo span{color:var(--green)}
 .footer-links a{color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:#fff}
 
-/* STICKY MOBILE CTA */
+/* STEP 5: Sticky mobile CTA */
 .sticky-cta{display:none;position:fixed;bottom:0;left:0;width:100%;background:#fff;padding:12px 6%;gap:10px;z-index:1000;box-shadow:0 -4px 12px rgba(0,0,0,0.1)}
-.sticky-cta a{flex:1;text-align:center;padding:12px;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.9rem}
+/* STEP 5: Bumped padding and font for accessibility */
+.sticky-cta a{flex:1;text-align:center;padding:14px;border-radius:6px;text-decoration:none;font-weight:700;font-size:0.95rem}
 
 @media(max-width:820px){
   .sticky-cta{display:flex}
@@ -170,6 +181,10 @@ footer .logo span{color:var(--green)}
   .steps::before{display:none}
   .step{padding:0;margin-bottom:2rem}
   .about-photo{max-width:100%;aspect-ratio:4/3}
+  /* STEP 1: Hide hero photo on mobile */
+  .hero-photo{display:none}
+  /* STEP 4: Full-width buttons on mobile */
+  .btn-lime,.btn-ghost{width:100%;text-align:center}
 }
 </style>
 </head>
@@ -184,13 +199,17 @@ footer .logo span{color:var(--green)}
 </nav>
 
 <section class="hero">
+  <!-- STEP 1: Glenn's photo floating right -->
+  <img src="glenn-profile.jpg" alt="Glenn, Tech It Easy — your local Essex tech expert" class="hero-photo">
   <div class="hero-inner">
     <div class="hero-pill"><span class="pill-dot"></span>Serving Essex &amp; surrounding areas</div>
     <h1>Home tech that<br><em>just works.</em></h1>
     <p class="hero-sub">Slow Wi-Fi, confusing smart TVs, dodgy connections — I fix it all. No jargon, no upselling. Just reliable tech you can actually enjoy.</p>
+    <!-- STEP 2: No Fix, No Fee badge added -->
     <div class="hero-pricing">
       <div class="price-badge">📞 <strong>Free</strong> phone consultation</div>
       <div class="price-badge">🔧 Jobs from <strong>£40</strong></div>
+      <div class="price-badge">🛡️ <strong>No Fix,</strong> No Fee</div>
     </div>
     <div class="hero-btns">
       <a href="tel:+447550007519" class="btn-lime">&#128222;&nbsp; Call Glenn — 07550 007519</a>
@@ -201,10 +220,10 @@ footer .logo span{color:var(--green)}
 
 <div class="trust">
   <ul class="trust-list">
-    <li><svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z"/></svg> Fully insured</li>
-    <li><svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z"/></svg> Local to Essex</li>
-    <li><svg class="trust-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg> No jargon, ever</li>
-    <li><svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5-star rated</li>
+    <li><svg class="trust-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z"/></svg> Fully insured</li>
+    <li><svg class="trust-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z"/></svg> Local to Essex</li>
+    <li><svg class="trust-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg> No jargon, ever</li>
+    <li><svg class="trust-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> 5-star rated</li>
   </ul>
 </div>
 
@@ -308,4 +327,67 @@ footer .logo span{color:var(--green)}
         <div class="contact-icon">💬</div>
         <div class="contact-item-text">
           <strong>WhatsApp</strong>
-          <a href="https://wa.
+          <a href="https://wa.me/447550007519">Message me on WhatsApp</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-item-text">
+          <strong>Hours</strong>
+          <span>Mon–Sat, 8am–7pm</span>
+        </div>
+      </div>
+    </div>
+    <!-- STEP 4: Trimmed form — 3 fields only, new CTA button -->
+    <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="form-row">
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" type="text" name="name" placeholder="e.g. Margaret" required>
+        </div>
+        <div>
+          <label for="phone">Best phone number</label>
+          <input id="phone" type="tel" name="phone" placeholder="e.g. 07700 900123" required>
+        </div>
+      </div>
+      <div>
+        <label for="service">What do you need help with?</label>
+        <select id="service" name="service">
+          <option value="">— Pick the closest one —</option>
+          <option value="wifi">Wi-Fi / broadband</option>
+          <option value="tv">TV &amp; streaming</option>
+          <option value="security">Security &amp; passwords</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit">📅 Book My Free Call</button>
+    </form>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to sort your tech?</h2>
+  <p>Call for a free chat — no obligation, no jargon.</p>
+  <div class="cta-btns">
+    <a href="tel:+447550007519" class="btn-white">&#128222; Call Glenn — 07550 007519</a>
+    <a href="https://wa.me/447550007519" class="btn-ghost-w">WhatsApp Me</a>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="logo">Tech It <span>Easy</span></a>
+  <div class="footer-links">
+    <span>Serving Essex &amp; surrounding areas</span>
+    <a href="tel:+447550007519">07550 007519</a>
+  </div>
+  <span>&copy; 2025 Tech It Easy. All rights reserved.</span>
+</footer>
+
+<!-- STEP 5: Sticky mobile CTA bar -->
+<div class="sticky-cta">
+  <a href="tel:+447550007519" style="background:var(--lime);color:var(--navy);">📞 Call Glenn</a>
+  <a href="https://wa.me/447550007519" style="background:var(--navy);color:#fff;">💬 WhatsApp</a>
+</div>
+
+</body>
+</html>
